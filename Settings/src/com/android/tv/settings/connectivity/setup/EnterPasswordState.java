@@ -131,6 +131,7 @@ public class EnterPasswordState implements State {
                 @Override
                 public void onBindViewHolder(ViewHolder vh, GuidedAction action) {
                     super.onBindViewHolder(vh, action);
+                    HwKeyboardFixer.setupHwEnterAsImeActionNext((EditText)vh.getTitleView());
                     if (action.getId() == ACTION_ID_CHECKBOX) {
                         PasswordViewHolder checkBoxVH = (PasswordViewHolder) vh;
                         mCheckBox = checkBoxVH.mCheckbox;

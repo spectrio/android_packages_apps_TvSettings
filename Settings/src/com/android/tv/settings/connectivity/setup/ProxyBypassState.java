@@ -19,6 +19,7 @@ package com.android.tv.settings.connectivity.setup;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -102,6 +103,12 @@ public class ProxyBypassState implements State {
                 @Override
                 public int onProvideItemLayoutId() {
                     return R.layout.setup_text_input_item;
+                }
+
+                @Override
+                public void onBindViewHolder(ViewHolder vh, GuidedAction action) {
+                    super.onBindViewHolder(vh, action);
+                    HwKeyboardFixer.setupHwEnterAsImeActionNext((EditText)vh.getTitleView());
                 }
             };
         }
